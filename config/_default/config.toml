@@ -1,4 +1,4 @@
 baseURL = "https://tk-zzz.github.io/notion-hugo-test/"
 languageCode = "en-us"
 title = "My New Hugo Site"
-theme = "DoIt"
+theme = "PaperMod"
