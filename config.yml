@@ -8,9 +8,9 @@ params:
         imageWidth: 120 # custom size
         imageHeight: 120 # custom size
         buttons:
-          - name: github
-            url: "https://github.com/tk-zzz/"
+            - name: github
+                url: "https://github.com/tk-zzz/"
 
     socialIcons: # optional
-      - name: github
-        url: "https://github.com/tk-zzz/"
+        - name: github
+            url: "https://github.com/tk-zzz/"
