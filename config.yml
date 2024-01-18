@@ -14,7 +14,7 @@ params:
               url: "https://github.com/tk-zzz/"
 
     socialIcons: # optional
-        - name: Github
+        - name: github
           url: "https://github.com/"
         - name: "<platform 2>"
           url: "<link2>"
