@@ -10,8 +10,8 @@ params:
         buttons:
             - name: Archive
               url: "/archive"
-            - name: Github
-              url: "https://github.com/"
+            - name: github
+              url: "https://github.com/tk-zzz/"
 
     socialIcons: # optional
         - name: Github
