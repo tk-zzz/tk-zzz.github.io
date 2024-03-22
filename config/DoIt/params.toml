@@ -187,7 +187,7 @@ warning = 180
 [page.toc]
 # whether to enable the table of the contents
 # 是否使用目录
-enable = true
+enable = false
 # whether to keep the static table of the contents in front of the post
 # 是否保持使用文章前面的静态目录
 keepStatic = false
