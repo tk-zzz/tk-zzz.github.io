@@ -1,4 +1,4 @@
-baseURL = "https://tk-zzz.github.io/notion-hugo-test/"
+baseURL = "https://tk-zzz.github.io"
 languageCode = "en-us"
 title = "tk-zzz's homepage"
 theme = "PaperMod"
