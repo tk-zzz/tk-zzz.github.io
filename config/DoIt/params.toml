@@ -524,7 +524,7 @@ thumbnailUrl = "/images/screenshot.png"
 enable = false
 # Google Analytics
 [analytics.google]
-id = "G-NCBD53TDYL"
+id = "G-ZX4YSR0NKN"
 # whether to anonymize IP
 # 是否匿名化用户 IP
 anonymizeIP = true
