@@ -65,6 +65,16 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:github",
 			url: "https://github.com/tk-zzz",
 		},
+		{
+			name: "X",
+			icon: "fa6-brands:x-twitter",
+			url: "https://x.com/tk_zzzzz",
+		},
+		{
+			name: "Zenn",
+			icon: "fa6-solid:pen-nib",
+			url: "https://zenn.dev/tk_zzz",
+		},
 	],
 };
 
