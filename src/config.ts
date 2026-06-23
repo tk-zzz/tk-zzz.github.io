@@ -42,7 +42,10 @@ export const siteConfig: SiteConfig = {
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
-		LinkPreset.Archive,
+		{
+			name: "Articles",
+			url: "/archive/",
+		},
 		LinkPreset.About,
 		{
 			name: "GitHub",

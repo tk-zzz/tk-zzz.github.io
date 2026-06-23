@@ -1,10 +1,12 @@
 ---
 import type { GetStaticPaths } from "astro";
 import Pagination from "../components/control/Pagination.astro";
+import { Icon } from "astro-icon/components";
 import PostPage from "../components/PostPage.astro";
 import { PAGE_SIZE } from "../constants/constants";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
+import { url } from "../utils/url-utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allBlogPosts = await getSortedPosts();
@@ -15,9 +17,52 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 
 const len = page.data.length;
+const isHome = page.currentPage === 1;
 ---
 
-<MainGridLayout>
-    <PostPage page={page}></PostPage>
-    <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
-</MainGridLayout>
+{isHome ? (
+    <MainGridLayout hideSidebarWidgets={true}>
+        <section class="card-base px-7 py-8 md:px-10 md:py-10 rounded-[var(--radius-large)]">
+            <p class="transition text-[var(--primary)] font-bold mb-4">Android Engineer</p>
+            <h1 class="transition text-4xl md:text-5xl font-bold text-90 mb-5 leading-tight">
+                tk-zzz
+            </h1>
+            <p class="transition text-75 text-lg leading-8 max-w-2xl">
+                2016年からAndroidエンジニアをやっています。現在はREALITY株式会社でAndroidアプリ開発に携わっています。
+            </p>
+
+            <div class="transition border-t border-dashed border-black/10 dark:border-white/15 my-8"></div>
+
+            <div class="grid gap-3 text-75">
+                <div class="flex gap-4">
+                    <span class="text-90 font-bold w-16 shrink-0">2016</span>
+                    <span>新卒入社</span>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-90 font-bold w-16 shrink-0">2020</span>
+                    <span>フリーランス</span>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-90 font-bold w-16 shrink-0">2021</span>
+                    <span>REALITY株式会社</span>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3 mt-8">
+                <a href={url("/about/")} class="btn-regular rounded-xl h-11 px-4 gap-2 font-bold active:scale-95">
+                    About
+                    <Icon name="material-symbols:chevron-right-rounded" class="text-[1.35rem]"></Icon>
+                </a>
+                <a href={url("/archive/")} class="btn-regular rounded-xl h-11 px-4 gap-2 font-bold active:scale-95">
+                    Articles
+                    <Icon name="material-symbols:chevron-right-rounded" class="text-[1.35rem]"></Icon>
+                </a>
+            </div>
+        </section>
+    </MainGridLayout>
+) : (
+    <MainGridLayout>
+        <PostPage page={page}></PostPage>
+        <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
+    </MainGridLayout>
+)}
