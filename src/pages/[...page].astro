@@ -1,12 +1,10 @@
 ---
 import type { GetStaticPaths } from "astro";
 import Pagination from "../components/control/Pagination.astro";
-import { Icon } from "astro-icon/components";
 import PostPage from "../components/PostPage.astro";
 import { PAGE_SIZE } from "../constants/constants";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
-import { url } from "../utils/url-utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allBlogPosts = await getSortedPosts();
@@ -23,24 +21,9 @@ const isHome = page.currentPage === 1;
 {isHome ? (
     <MainGridLayout hideSidebarWidgets={true}>
         <section class="card-base px-7 py-8 md:px-10 md:py-10 rounded-[var(--radius-large)]">
-            <p class="transition text-[var(--primary)] font-bold mb-4">Android Engineer</p>
-            <h1 class="transition text-4xl md:text-5xl font-bold text-90 mb-5 leading-tight">
-                tk-zzz
-            </h1>
-            <p class="transition text-75 text-lg leading-8 max-w-2xl">
+            <p class="transition text-75 text-lg leading-8 max-w-2xl m-0">
                 2016年からAndroidエンジニアをやっています。現在はREALITY株式会社でAndroidアプリ開発に携わっています。
             </p>
-
-			<div class="flex flex-wrap gap-3 mt-8">
-                <a href={url("/about/")} class="btn-regular rounded-xl h-11 px-4 gap-2 font-bold active:scale-95">
-                    About
-                    <Icon name="material-symbols:chevron-right-rounded" class="text-[1.35rem]"></Icon>
-                </a>
-                <a href={url("/archive/")} class="btn-regular rounded-xl h-11 px-4 gap-2 font-bold active:scale-95">
-                    Articles
-                    <Icon name="material-symbols:chevron-right-rounded" class="text-[1.35rem]"></Icon>
-                </a>
-            </div>
         </section>
     </MainGridLayout>
 ) : (
