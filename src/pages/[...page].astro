@@ -21,9 +21,37 @@ const isHome = page.currentPage === 1;
 {isHome ? (
     <MainGridLayout hideSidebarWidgets={true}>
         <section class="card-base px-7 py-8 md:px-10 md:py-10 rounded-[var(--radius-large)]">
-            <p class="transition text-75 text-lg leading-8 max-w-2xl m-0">
-                2016年からAndroidエンジニアをやっています。現在はREALITY株式会社でAndroidアプリ開発に携わっています。
-            </p>
+            <div class="max-w-3xl space-y-8">
+                <div class="space-y-4">
+                    <p class="transition text-75 text-lg leading-8 m-0">
+                        2016年からAndroidエンジニアをやっています。現在はREALITY株式会社でAndroidアプリ開発に携わっています。
+                    </p>
+                    <p class="transition text-50 leading-7 m-0">
+                        AndroidアプリのUI実装、Jetpack Compose、ビルド改善、アプリ起動時間の高速化などに関心があります。開発合宿の運営や技術記事の執筆もしています。
+                    </p>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-3">
+                    <div class="rounded-2xl bg-black/[0.03] dark:bg-white/[0.06] px-5 py-4">
+                        <div class="transition text-sm font-bold text-75 mb-2">Android</div>
+                        <p class="transition text-sm leading-6 text-50 m-0">
+                            REALITYのAndroidアプリ開発に携わっています。
+                        </p>
+                    </div>
+                    <div class="rounded-2xl bg-black/[0.03] dark:bg-white/[0.06] px-5 py-4">
+                        <div class="transition text-sm font-bold text-75 mb-2">Writing</div>
+                        <p class="transition text-sm leading-6 text-50 m-0">
+                            REALITY Tech BlogやZennで技術記事を書いています。
+                        </p>
+                    </div>
+                    <div class="rounded-2xl bg-black/[0.03] dark:bg-white/[0.06] px-5 py-4">
+                        <div class="transition text-sm font-bold text-75 mb-2">Talk</div>
+                        <p class="transition text-sm leading-6 text-50 m-0">
+                            アプリ起動時間高速化について登壇しました。
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     </MainGridLayout>
 ) : (
